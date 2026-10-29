@@ -2,5 +2,6 @@
     "slug": "fairway-atlas",
     "name": "Fairway Atlas",
     "tagline": "Play any real golf course, right in your browser",
-    "icon": "flag-triangle-right"
+    "icon": "flag-triangle-right",
+    "url": "https://fairway-atlas-xi.vercel.app"
 }

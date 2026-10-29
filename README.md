@@ -8,14 +8,16 @@ Play any real golf course, right in your browser
 
 ## How it works
 
-- Search 31,518 real courses and tee off on any hole. The course is rebuilt from OpenStreetMap's mapped greens,
-  fairways, bunkers and water, on real elevation.
-- A WebGPU engine draws it: terrain, grass, trees, ocean, clouds and shadows, at a steady frame rate.
-- One physics model handles the ball's flight, spin, bounce and roll. A Square Golf Omni launch monitor can drive
-  it over Web Bluetooth (desktop Chrome).
-- Everything loads in your browser, straight from open data. There's no server.
+- **Any course.** Search the named golf courses in OpenStreetMap and tee off on any hole. The course is rebuilt in
+  your browser from its mapped greens, tees, fairways, bunkers, water, buildings and trees, on real elevation.
+- **Drawn by its own engine.** A custom WebGPU renderer: streamed CDLOD terrain, real grass blades,
+  procedural trees, an FFT ocean with surf, a physical sky with volumetric clouds, soft shadows and temporal
+  upscaling. It needs a browser with WebGPU (current Chrome, Edge or Safari).
+- **Real ball physics.** Club impact, spin, drag and lift, wind, bounce, skid, roll and a regulation cup, all in one
+  solver. A Square Golf Omni launch monitor can play shots over Bluetooth in desktop Chrome.
+- **Nothing to install, no server.** Everything loads straight from open data into your browser.
 
-Controls, the launch monitor, how a course is built and how the ball moves: [docs.md](docs.md).
+How it all works, in detail: [docs.md](docs.md).
 
 ## Data sources
 
