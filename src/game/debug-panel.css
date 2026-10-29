@@ -1,0 +1,97 @@
+@layer legacy {
+/* Visual debug (debug-tools.js, ?debug): dock trigger + panel. Same card, type and controls as the Performance panel
+   (perf-panel.css), so the two developer panels read as one system. */
+#visualDebug{--vd-hi:var(--hi,#fafafa);--vd-muted:var(--muted,#a9b5a9);--vd-text:var(--text,#f3f6f1);--vd-body:var(--body,#c3cdc3);--vd-line:var(--line,#ffffff14)}
+/* trigger: a plain dock cell like "Launch monitor" (the dock draws the cell; no pill or border of its own) */
+#visualDebug>summary{list-style:none;display:flex;align-items:center;gap:10px;height:100%;cursor:pointer;user-select:none;-webkit-user-select:none;
+ font:inherit;letter-spacing:inherit;text-transform:none;color:var(--vd-muted);transition:color .15s}
+#visualDebug>summary::-webkit-details-marker{display:none}
+#visualDebug>summary:hover,#visualDebug[open]>summary{color:var(--vd-text)}
+#visualDebug>summary:focus-visible{outline:2px solid var(--vd-hi);outline-offset:-4px;border-radius:6px}
+#visualDebug>summary i{font:var(--f-unit,500 11px/1 'DM Sans',sans-serif);font-style:normal;letter-spacing:0;color:#fff;display:inline-block;transition:transform .2s cubic-bezier(.2,.8,.2,1)}
+#visualDebug[open]>summary i{transform:rotate(180deg)}
+
+/* panel: anchored to the dock (its containing block), opening upward */
+#visualDebug .vd-body{position:absolute;left:0;bottom:calc(100% + 6px);width:372px;z-index:70;box-sizing:border-box;
+ max-height:calc(100vh - 2 * var(--m,24px) - var(--brow,40px) - 6px - 76px);display:flex;flex-direction:column;overflow:hidden;
+ background:var(--surf,#1c2620d9);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);
+ border:1px solid var(--vd-line);border-radius:12px;box-shadow:0 18px 50px #0b120f59,0 2px 8px #0b120f33;
+ color:var(--vd-text);font:400 12px/1.4 'DM Sans',sans-serif;letter-spacing:0;text-transform:none;white-space:normal;cursor:default;
+ animation:vdIn .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes vdIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}
+#visualDebug .vd-head{flex:none;display:flex;justify-content:space-between;align-items:flex-start;padding:18px 18px 4px}
+#visualDebug .vd-head small{font:500 9px/1 'DM Sans',sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:var(--vd-muted)}
+#visualDebug .vd-head h2{font:600 18px/1.25 'Manrope',sans-serif;letter-spacing:-.2px;margin:7px 0 0;color:var(--vd-text)}
+#visualDebug .vd-close{all:unset;cursor:pointer;width:28px;height:28px;display:grid;place-items:center;border-radius:6px;font-size:20px;line-height:1;color:var(--vd-muted);transition:background .15s,color .15s}
+#visualDebug .vd-close:hover{background:#ffffff14;color:var(--vd-text)}
+#visualDebug .vd-close:focus-visible{outline:2px solid var(--vd-hi)}
+#visualDebug .vd-scroll{flex:1;overflow:auto;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:#ffffff26 transparent}
+
+/* section labels and rows */
+#visualDebug .vd-label{display:flex;justify-content:space-between;margin:0 18px;padding:16px 0 6px;font:500 9px/1 'DM Sans',sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:var(--vd-muted);border-bottom:1px solid var(--vd-line)}
+#visualDebug .vd-sec{display:grid;padding:0 18px}
+#visualDebug .vd-opt{display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:10px 0 9px;border-bottom:1px solid var(--vd-line)}
+#visualDebug .vd-opt:last-child{border-bottom:0}
+#visualDebug .vd-name{min-width:0}
+#visualDebug .vd-name b{display:block;font:600 12.5px/1.3 'Manrope',sans-serif;color:var(--vd-text)}
+#visualDebug .vd-name small{display:block;margin-top:2px;font:400 10.5px/1.35 'DM Sans',sans-serif;color:var(--vd-muted)}
+#visualDebug .vd-opt.is-stack{grid-template-columns:1fr}
+#visualDebug .vd-row{display:flex;flex-wrap:wrap;gap:6px;padding:10px 0 2px}
+
+/* controls */
+#visualDebug .vd-switch{position:relative;display:block;width:34px;height:20px;cursor:pointer}
+#visualDebug .vd-switch input{position:absolute;inset:0;margin:0;opacity:0;cursor:pointer;width:100%;height:100%}
+#visualDebug .vd-switch span{position:absolute;inset:0;border-radius:10px;background:#ffffff1f;border:1px solid var(--line-2,#ffffff24);transition:background .2s,border-color .2s;pointer-events:none}
+#visualDebug .vd-switch span::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#e6ebe4;box-shadow:0 1px 3px #0006;transition:transform .22s cubic-bezier(.3,1.3,.5,1),background .2s}
+#visualDebug .vd-switch input:checked+span{background:var(--vd-hi);border-color:var(--vd-hi)}
+#visualDebug .vd-switch input:checked+span::after{transform:translateX(14px);background:#1c2620}
+#visualDebug .vd-switch input:focus-visible+span{outline:2px solid var(--vd-hi);outline-offset:2px}
+#visualDebug select{appearance:none;-webkit-appearance:none;width:100%;margin-top:8px;box-sizing:border-box;padding:7px 30px 7px 10px;cursor:pointer;
+ font:500 12px/1.2 'DM Sans',sans-serif;color:var(--vd-text);background:#ffffff0a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a9b5a9' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 11px center;
+ border:1px solid var(--vd-line);border-radius:8px;transition:border-color .15s,background-color .15s}
+#visualDebug select:hover{border-color:var(--line-2,#ffffff24);background-color:#ffffff12}
+#visualDebug select:focus-visible{outline:2px solid var(--vd-hi);outline-offset:1px}
+#visualDebug select option{background:#1c2620;color:var(--vd-text)}
+#visualDebug button:not(.vd-close){all:unset;box-sizing:border-box;cursor:pointer;padding:6px 10px;border-radius:7px;border:1px solid var(--vd-line);background:#ffffff0a;
+ font:500 11px/1.2 'DM Sans',sans-serif;color:var(--vd-body);white-space:nowrap;transition:background .15s,border-color .15s,color .15s}
+#visualDebug button:not(.vd-close):hover{background:#ffffff14;border-color:var(--line-2,#ffffff24);color:var(--vd-text)}
+#visualDebug button:not(.vd-close):active{transform:translateY(1px)}
+#visualDebug button:not(.vd-close):focus-visible{outline:2px solid var(--vd-hi);outline-offset:1px}
+#visualDebug button.on,#visualDebug #vdMarkA.on{background:#fafafa;border-color:#fafafa;color:#1c2620}
+#visualDebug input[type=range]{-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:#ffffff1a;margin:0;cursor:pointer}
+#visualDebug input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:#e6ebe4;box-shadow:0 1px 3px #0008;transition:transform .15s}
+#visualDebug input[type=range]:hover::-webkit-slider-thumb{transform:scale(1.15)}
+#visualDebug input[type=range]::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:#e6ebe4}
+#visualDebug input[type=range]:focus-visible{outline:2px solid var(--vd-hi);outline-offset:4px}
+#visualDebug .vd-slide{display:grid;grid-template-columns:1fr 120px 42px;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--vd-line)}
+#visualDebug .vd-slide span{font:600 12.5px/1.3 'Manrope',sans-serif;color:var(--vd-text)}
+#visualDebug .vd-slide output,#visualDebug .vg-ctl output{font:500 10.5px/1 ui-monospace,'SF Mono',Menlo,monospace;color:var(--vd-body);text-align:right;font-variant-numeric:tabular-nums}
+#visualDebug .vd-out{display:block;margin-top:8px;padding:9px 10px;border-radius:8px;background:#0b120f59;border:1px solid var(--vd-line);
+ font:400 10.5px/1.45 ui-monospace,'SF Mono',Menlo,monospace;color:var(--vd-body);white-space:pre-wrap;word-break:break-word;font-variant-numeric:tabular-nums;max-height:220px;overflow:auto}
+#visualDebug .vd-out:empty,#visualDebug .vd-out.is-idle{display:none}
+
+/* Grade (grade-panel.js): a collapsible section like the Performance panel's "CPU & memory" */
+#visualDebug .vd-grade{margin:4px 18px 0;border-top:1px solid var(--vd-line)}
+#visualDebug .vd-grade>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:13px 0 12px;cursor:pointer;font:600 12.5px/1.3 'Manrope',sans-serif;color:var(--vd-text)}
+#visualDebug .vd-grade>summary::-webkit-details-marker{display:none}
+#visualDebug .vd-grade>summary b{font:inherit}
+#visualDebug .vd-grade>summary::after{content:'';width:5px;height:5px;margin-right:4px;border-right:1.5px solid var(--vd-muted);border-bottom:1.5px solid var(--vd-muted);transform:rotate(45deg);transition:transform .2s}
+#visualDebug .vd-grade[open]>summary::after{transform:rotate(-135deg)}
+#visualDebug .vd-grade-body{display:grid;gap:6px;padding-bottom:6px}
+#visualDebug .vd-grade-body label{display:flex;align-items:center;justify-content:space-between;gap:8px;font:400 11.5px/1.3 'DM Sans',sans-serif;color:var(--vd-body)}
+#visualDebug .vd-grp{display:grid;gap:6px;padding:6px 0 4px;border-top:1px solid var(--vd-line)}
+#visualDebug .vd-grp>summary{list-style:none;cursor:pointer;padding:6px 0 2px;font:500 9px/1 'DM Sans',sans-serif;letter-spacing:1.3px;text-transform:uppercase;color:var(--vd-muted)}
+#visualDebug .vd-grp>summary::-webkit-details-marker{display:none}
+#visualDebug .vd-grp label span[data-k]{cursor:default;user-select:none}
+#visualDebug .vg-ctl{display:flex;align-items:center;gap:8px}
+#visualDebug .vg-ctl input[type=range]{width:120px}
+#visualDebug .vg-ctl output{min-width:42px}
+#visualDebug .vd-grade-body textarea{box-sizing:border-box;width:100%;min-height:80px;padding:8px;border-radius:8px;border:1px solid var(--vd-line);background:#0b120f59;color:var(--vd-body);font:400 10.5px/1.4 ui-monospace,Menlo,monospace}
+
+@media (max-width:760px){#visualDebug .vd-body{width:calc(100vw - 2 * var(--m,12px))}}
+@media (prefers-reduced-motion:reduce){#visualDebug .vd-body,#visualDebug>summary i{animation:none!important;transition:none!important}}
+#visualDebug .vg-ctl select{width:auto;margin:0;padding:5px 26px 5px 9px;background-position:right 9px center}
+#visualDebug .vd-grade-body>.vd-out{margin-top:0}
+#visualDebug .vd-grp label{min-height:22px}
+
+}

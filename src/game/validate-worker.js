@@ -1,0 +1,2 @@
+import {polygonValid} from './engine.js';
+self.onmessage=({data})=>{const invalid=[];let checked=0;for(const f of data.features){if(!f.closed)continue;checked++;if(!f.coords.every(p=>p.length===2&&p.every(Number.isFinite))||!polygonValid(f.coords.map(p=>[(p[0]-f.coords[0][0])*111320*Math.cos(f.coords[0][1]*Math.PI/180),(p[1]-f.coords[0][1])*111320])))invalid.push(f.id)}self.postMessage({checked,invalid})};

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audio lab · Fairway Atlas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
+<style>
+:root{--bg:#0f1713;--surf:#17221c;--surf2:#1d2a23;--line:#ffffff14;--line2:#ffffff24;--text:#f3f6f1;--body:#c3cdc3;--muted:#8f9c90;--hi:#dbeab4;--warn:#f0b36b;--bad:#e9877a}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font:400 13px/1.45 'DM Sans',system-ui,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0f1713ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:16px 24px 12px}
+.top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+small.ey{font:500 9px/1 'DM Sans';letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+h1{font:700 22px/1.2 Manrope,sans-serif;margin:6px 0 0;letter-spacing:-.3px}
+.hint{color:var(--muted);font-size:12px;max-width:620px;margin:6px 0 0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+button,select,input{font:inherit;color:inherit}
+.tab{all:unset;cursor:pointer;padding:6px 11px;border-radius:999px;border:1px solid var(--line);background:#ffffff08;color:var(--body);font-weight:500;font-size:12px}
+.tab:hover{background:#ffffff12}.tab.on{background:var(--hi);border-color:var(--hi);color:#1c2620}
+.tab b{font-weight:600;opacity:.7;margin-left:4px}
+.tools{display:flex;gap:8px;align-items:center}
+.search{background:#ffffff0a;border:1px solid var(--line);border-radius:8px;padding:7px 10px;width:220px;outline:none}.search:focus{border-color:var(--hi)}
+main{padding:10px 24px 80px;max-width:1180px}
+.group{margin-top:22px}
+.gh{display:flex;align-items:baseline;gap:10px;padding:0 0 8px;border-bottom:1px solid var(--line)}
+.gh h2{font:700 15px/1.2 Manrope,sans-serif;margin:0;text-transform:capitalize}.gh span{color:var(--muted);font-size:12px}
+.gh .desc{margin-left:auto;color:var(--muted);font-size:11.5px}
+.row{display:grid;grid-template-columns:34px 190px minmax(0,1fr) 170px 150px 64px;gap:12px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line);border-radius:8px}
+.row.sel{background:var(--surf2);box-shadow:inset 0 0 0 1px var(--line2)}
+.row.busy{opacity:.45;pointer-events:none}
+.play{all:unset;cursor:pointer;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#ffffff12;color:var(--text)}
+.play:hover{background:#ffffff22}.play.on{background:var(--hi);color:#1c2620}
+canvas{width:100%;height:36px;display:block;border-radius:4px;background:#ffffff06;cursor:pointer}
+.meta{min-width:0}.meta b{display:block;font:600 12.5px/1.3 Manrope,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta small{display:block;color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta a{color:var(--muted)}
+select{appearance:none;width:100%;background:#ffffff0a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23a9b5a9' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 9px center;border:1px solid var(--line);border-radius:7px;padding:6px 26px 6px 9px;cursor:pointer}
+select option,select optgroup{background:#1c2620}
+.gain{display:flex;align-items:center;gap:8px}.gain input{flex:1;accent-color:#dbeab4}.gain output{width:34px;text-align:right;color:var(--body);font:500 11px ui-monospace,Menlo,monospace}
+.del{all:unset;cursor:pointer;padding:6px 8px;border-radius:7px;color:var(--muted);text-align:center;border:1px solid transparent}.del:hover{color:var(--bad);border-color:#e9877a55;background:#e9877a14}
+.ctx{all:unset;cursor:pointer;font-size:11px;color:var(--muted);margin-top:2px}.ctx:hover{color:var(--hi)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--surf);border:1px solid var(--line2);border-radius:10px;padding:10px 14px;box-shadow:0 12px 40px #0008;display:flex;gap:12px;align-items:center}
+.toast button{all:unset;cursor:pointer;color:var(--hi);font-weight:600}
+.warn{margin-top:10px;color:var(--warn);font-size:12px}
+.keys{color:var(--muted);font-size:11.5px}.keys kbd{font:500 10.5px ui-monospace,Menlo,monospace;background:#ffffff12;border-radius:4px;padding:1px 5px;margin:0 2px}
+.empty{color:var(--muted);padding:40px 0;text-align:center}
+.new{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:999px;background:#f0b36b22;color:var(--warn);font:600 9.5px/1.4 'DM Sans';letter-spacing:.6px;text-transform:uppercase;vertical-align:1px}
+.row.fresh{box-shadow:inset 3px 0 0 var(--warn)}.row.fresh.sel{box-shadow:inset 3px 0 0 var(--warn),inset 0 0 0 1px var(--line2)}
+.lis{all:unset;cursor:pointer;font-size:11px;color:var(--muted);margin-left:10px}.lis:hover{color:var(--hi)}
+.card{padding:12px 12px 10px;border-bottom:1px solid var(--line);border-radius:8px;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:start}.card.fresh{box-shadow:inset 3px 0 0 var(--warn)}.card.sel{background:var(--surf2)}
+.line{display:grid;grid-template-columns:62px 1fr;gap:8px;padding:2px 0;font-size:13px;color:var(--body)}.line b{font:600 11px/1.9 'DM Sans';letter-spacing:.6px;text-transform:uppercase}.line b.dale{color:#9fc3e6}.line b.darren{color:#f0b36b}.line i{color:var(--muted);font-style:normal}
+.cid{color:var(--muted);font:500 10.5px ui-monospace,Menlo,monospace;margin-top:4px}.acts{display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+.gh button{all:unset;cursor:pointer;font-size:11.5px;color:var(--hi);margin-left:12px}
+@media (max-width:900px){.row{grid-template-columns:34px 1fr 140px 56px}.row canvas,.row .gain{display:none}}
+</style></head><body>
+<header><div class="top"><div><small class="ey">Fairway Atlas · dev tool</small><h1>Audio lab</h1>
+<p class="hint">Listen, re-label and delete the game's sounds. Changes rename or move the file in <code>dist/audio/</code> right away; reload the game to hear them. Deleted files go to <code>audio-trash/</code> and can be restored. <b>Unsorted</b> files are candidates the game doesn't play.</p></div>
+<div class="tools"><input class="search" id="q" placeholder="Filter (kind, source, author)…"><span class="keys"><kbd>↑</kbd><kbd>↓</kbd> select · <kbd>Space</kbd> play · <kbd>W</kbd> with whoosh · <kbd>1</kbd>–<kbd>9</kbd> relabel · <kbd>L</kbd> listened · <kbd>⌫</kbd> delete</span></div></div>
+<nav class="tabs" id="tabs"></nav><div id="warn"></div></header>
+<main id="list"><p class="empty">Loading… (needs the dev server: <code>npm start</code>)</p></main>
+<script type="module">
+const $=s=>document.querySelector(s);const LABEL={impact:'Club impact',whoosh:'Whoosh',land:'Ball landing',ambience:'Ambience',_unused:'Unsorted',trash:'Deleted',new:'New',commentary:'Commentary'};
+const DESC={impact:'Club face on ball. One random take per swing.',whoosh:'The club through the air, lined up with the impact.',land:'Every bounce, by surface; water splash; ball in the cup.',ambience:'Looping beds mixed by place and time.',_unused:'Not played. Relabel to use.',trash:'Restore to put back where it was.',new:'Sounds you haven\'t dealt with yet. Relabel, change volume, delete, or mark as listened.'};
+let data=null,com=null,tab='new',sel=0,rows=[],ctx=null,playing=null;const bufs=new Map();
+const ac=()=>ctx??=new AudioContext();
+async function load(){const r=await fetch('/__audio/list',{cache:'no-store'});if(!r.ok)throw Error(await r.text());data=await r.json();try{const c=await fetch('/__audio/commentary',{cache:'no-store'});com=c.ok?await c.json():null;}catch{com=null;}render();}
+function kindsOptions(f){const g=Object.entries(data.folders).map(([folder,kinds])=>`<optgroup label="${LABEL[folder]}">${kinds.map(k=>`<option value="${folder}/${k}" ${f.area==='live'&&f.folder===folder&&f.kind===k?'selected':''}>${LABEL[folder]} · ${k}</option>`).join('')}</optgroup>`).join('');
+ return g+`<optgroup label="Not played"><option value="_unused/${f.kind}" ${f.folder==='_unused'&&f.area==='live'?'selected':''}>Unsorted</option></optgroup>`;}
+function files(){const q=$('#q').value.trim().toLowerCase();return data.files.filter(f=>{const inTab=tab==='all'?f.area==='live':tab==='new'?f.area==='live'&&!f.reviewed:tab==='trash'?f.area==='trash':f.area==='live'&&f.folder===tab;if(!inTab)return false;if(!q)return true;const s=data.sources[f.src]||{};return (f.path+' '+(s.title||'')+' '+(s.author||'')).toLowerCase().includes(q);});}
+function render(){const count=k=>k==='commentary'?(com?com.script.exchanges.length:0):data.files.filter(f=>k==='trash'?f.area==='trash':k==='new'?f.area==='live'&&!f.reviewed:f.area==='live'&&(k==='all'||f.folder===k)).length;
+ $('#tabs').innerHTML=['new','commentary','impact','whoosh','land','ambience','_unused','trash','all'].filter(k=>k!=='new'||count('new')).map(k=>{const n=k==='commentary'?(com?com.script.exchanges.filter(e=>!com.reviewed[e.id]).length:0):data.files.filter(f=>f.area==='live'&&!f.reviewed&&(k==='all'||f.folder===k)).length;return `<button class="tab ${tab===k?'on':''}" data-t="${k}">${k==='all'?'All':LABEL[k]}<b>${count(k)}</b>${k!=='new'&&k!=='trash'&&n?`<span class="new">${n} new</span>`:''}</button>`}).join('');
+ $('#warn').innerHTML=data.warnings?.length?`<div class="warn">⚠ ${data.warnings.map(w=>w.replace(/</g,'&lt;')).join('<br>')}</div>`:'';
+
+ if(tab==='commentary'){renderCommentary();return;}
+ const list=files().sort((a,b)=>(a.folder+a.kind+a.path).localeCompare(b.folder+b.kind+b.path));rows=list;sel=Math.min(sel,Math.max(0,list.length-1));
+ if(!list.length){$('#list').innerHTML='<p class="empty">Nothing here.</p>';return;}
+ const groups=new Map();for(const f of list){const k=(tab==='trash'||tab==='_unused'||tab==='new'||tab==='all'?f.folder+' · ':'')+(f.folder==='whoosh'?'whoosh':f.kind||'?');(groups.get(k)||groups.set(k,[]).get(k)).push(f);}
+ let i=0;$('#list').innerHTML=[...groups].map(([k,fs])=>`<section class="group"><div class="gh"><h2>${k}</h2><span>${fs.length} file${fs.length>1?'s':''}</span><span class="desc">${DESC[tab==='all'?fs[0].folder:tab]||''}</span>${fs.some(f=>!f.reviewed&&f.area==='live')?`<button data-mark="${fs.filter(f=>!f.reviewed&&f.area==='live').map(f=>f.path).join('|')}">Mark ${fs.filter(f=>!f.reviewed&&f.area==='live').length} listened</button>`:''}</div>${fs.map(f=>rowHTML(f,i++)).join('')}</section>`).join('');
+ for(const c of document.querySelectorAll('canvas'))io.observe(c);}
+function rowHTML(f,i){const s=data.sources[f.src]||{};const trash=f.area==='trash';
+ return `<div class="row ${i===sel?'sel':''} ${!f.reviewed&&!trash?'fresh':''}" data-i="${i}"><button class="play" data-a="play" title="Play (Space)">▶</button>
+ <div class="meta"><b>${f.path.split('/').pop()}${!f.reviewed&&!trash?'<span class="new">new</span>':''}</b><small>${s.author?`<a href="${s.url}" target="_blank" rel="noopener">${s.author}</a> · ${s.license}`:'unknown source'}</small>${f.folder==='impact'&&!trash?'<button class="ctx" data-a="ctx">▶ with whoosh (W)</button>':''}${trash?'':`<button class="lis" data-a="listened">${f.reviewed?'✓ listened':'Mark listened (L)'}</button>`}</div>
+ <canvas data-i="${i}" width="600" height="72" data-a="play"></canvas>
+ ${trash?`<span class="keys">was ${f.folder}/${f.kind??''}</span>`:`<select data-a="kind">${kindsOptions(f)}</select>`}
+ ${trash?'<span></span>':`<div class="gain"><input type="range" min="0.2" max="2" step="0.05" value="${f.gain??1}" data-a="gain" title="Level for this file"><output>${(+(f.gain??1)).toFixed(2)}</output></div>`}
+ <button class="del" data-a="${trash?'restore':'delete'}">${trash?'Restore':'Delete'}</button></div>`;}
+async function buffer(f){const key=f.area+':'+f.path;if(!bufs.has(key))bufs.set(key,fetch((f.area==='trash'?'/__audio/trashfile/':'/audio/')+f.path,{cache:'no-store'}).then(r=>r.arrayBuffer()).then(b=>ac().decodeAudioData(b)));return bufs.get(key);}
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){io.unobserve(e.target);draw(e.target);}},{rootMargin:'200px'});
+async function draw(c){const f=rows[+c.dataset.i];if(!f)return;try{const b=await buffer(f),d=b.getChannelData(0),g=c.getContext('2d'),W=c.width,H=c.height,step=Math.max(1,Math.floor(d.length/W));g.clearRect(0,0,W,H);g.fillStyle='#dbeab4';
+ for(let x=0;x<W;x++){let m=0;for(let j=x*step;j<(x+1)*step&&j<d.length;j++)m=Math.max(m,Math.abs(d[j]));const h=Math.max(1,m*(f.gain??1)*H*.9);g.globalAlpha=.85;g.fillRect(x,(H-h)/2,1,h);}
+ g.globalAlpha=1;g.fillStyle='#8f9c90';g.font='18px DM Sans';g.fillText(b.duration.toFixed(2)+' s',W-70,H-8);}catch{}}
+function stop(){if(playing){try{playing.src.stop()}catch{}playing.btn?.classList.remove('on');playing=null;}}
+async function play(i,withWhoosh=false){const f=rows[i];if(!f)return;const btn=document.querySelector(`.row[data-i="${i}"] .play`);if(playing?.i===i&&!withWhoosh){stop();return;}stop();const c=ac();await c.resume();
+ const b=await buffer(f);const g=c.createGain();g.gain.value=f.gain??1;g.connect(c.destination);const s=c.createBufferSource();s.buffer=b;s.loop=f.folder==='ambience';s.connect(g);let t=c.currentTime+.02;
+ if(withWhoosh){const ws=data.files.filter(x=>x.area==='live'&&x.folder==='whoosh');if(ws.length){const w=ws[Math.floor(Math.random()*ws.length)],wb=await buffer(w),d=wb.getChannelData(0);let k=0,m=0;for(let j=0;j<d.length;j++)if(Math.abs(d[j])>m){m=Math.abs(d[j]);k=j;}
+  const ws_=c.createBufferSource(),wg=c.createGain();wg.gain.value=.4;ws_.buffer=wb;ws_.connect(wg);wg.connect(c.destination);ws_.start(t);t+=k/wb.sampleRate+.03;}}
+ s.start(t);btn?.classList.add('on');playing={src:s,btn,i};s.onended=()=>{if(playing?.src===s){btn?.classList.remove('on');playing=null;}};}
+async function act(path,body){const r=await fetch('/__audio/'+path,{method:'POST',body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw Error(j.error);return j;}
+let undo=null;function toast(msg,fn){document.querySelector('.toast')?.remove();const t=document.createElement('div');t.className='toast';t.innerHTML=`<span>${msg}</span>${fn?'<button>Undo</button>':''}`;document.body.append(t);if(fn)t.querySelector('button').onclick=async()=>{t.remove();await fn();};setTimeout(()=>t.remove(),5000);}
+async function relabel(i,value){const f=rows[i];const [folder,kind]=value.split('/');const row=document.querySelector(`.row[data-i="${i}"]`);row?.classList.add('busy');
+ try{const r=await act('move',{path:f.path,area:f.area,folder,kind,gain:f.gain});const back={folder:f.folder,kind:f.kind};bufs.delete(f.area+':'+f.path);await load();toast(`${f.path.split('/').pop()} → ${folder==='_unused'?'Unsorted':LABEL[folder]+' · '+kind}`,async()=>{await act('move',{path:r.path,area:'live',folder:back.folder,kind:back.kind});await load();});}catch(e){toast('⚠ '+e.message);row?.classList.remove('busy');}}
+async function remove(i){const f=rows[i];stop();try{const r=await act(f.area==='trash'?'restore':'delete',{path:f.path,area:f.area});await load();toast(f.area==='trash'?'Restored '+r.path:'Deleted '+f.path.split('/').pop(),f.area==='trash'?null:async()=>{await act('restore',{path:r.path,area:'trash'});await load();});}catch(e){toast('⚠ '+e.message);}}
+async function listened(i){const f=rows[i];if(!f||f.area!=='live')return;await act('review',{path:f.path,area:f.area,reviewed:!f.reviewed});const keep=sel;await load();select(Math.min(keep+(f.reviewed||tab!=='new'?1:0),rows.length-1));}
+async function setGain(i,v){const f=rows[i];try{await act('move',{path:f.path,area:f.area,folder:f.folder,kind:f.kind,gain:+v});await load();}catch(e){toast('⚠ '+e.message);}}
+$('#tabs').onclick=e=>{const b=e.target.closest('[data-t]');if(!b)return;tab=b.dataset.t;sel=0;stop();render();};$('#q').oninput=()=>{sel=0;render();};
+$('#list').addEventListener('click',e=>{const el=e.target.closest('[data-a]');const row=e.target.closest('.row');if(!row)return;const i=+row.dataset.i;select(i);if(!el)return;const a=el.dataset.a;if(a==='play')play(i);if(a==='ctx')play(i,true);if(a==='delete'||a==='restore')remove(i);if(a==='listened')listened(i);});
+$('#list').addEventListener('click',async e=>{const b=e.target.closest('[data-mark]');if(!b)return;await act('review-all',{paths:b.dataset.mark.split('|'),area:'live'});await load();});
+$('#list').addEventListener('change',e=>{const el=e.target;const row=el.closest('.row');if(!row)return;const i=+row.dataset.i;if(el.dataset.a==='kind')relabel(i,el.value);if(el.dataset.a==='gain')setGain(i,el.value);});
+$('#list').addEventListener('input',e=>{if(e.target.dataset.a==='gain')e.target.nextElementSibling.value=(+e.target.value).toFixed(2);});
+function select(i){sel=i;for(const r of document.querySelectorAll('.row'))r.classList.toggle('sel',+r.dataset.i===i);document.querySelector(`.row[data-i="${i}"]`)?.scrollIntoView({block:'nearest'});}
+
+// ---- Commentary tab: exchanges from commentary/script.json, grouped by moment and situation
+function renderCommentary(){if(!com){$('#list').innerHTML='<p class="empty">No commentary script found.</p>';return;}const S=com.script,q=$('#q').value.trim().toLowerCase();
+ const V=S.voices;let i=0;rows=[];let html='';
+ for(const [m,def] of Object.entries(S.moments)){const exs=S.exchanges.filter(e=>e.moment===m&&(!q||JSON.stringify(e).toLowerCase().includes(q)));if(!exs.length&&q)continue;
+  const fresh=exs.filter(e=>!com.reviewed[e.id]);html+=`<section class="group"><div class="gh"><h2>${m}</h2><span>${exs.length} exchange${exs.length===1?'':'s'}</span><span class="desc">${def.plays}</span>${fresh.length?`<button data-cmark="${fresh.map(e=>e.id).join('|')}">Mark ${fresh.length} listened</button>`:''}</div>`;
+  for(const [w,label] of Object.entries(def.situations)){const list=exs.filter(e=>e.when===w);if(!list.length){if(!q)html+=`<div class="card"><span></span><div><div class="cid">${m} · ${w} — ${label}</div><div class="warn">No exchange for this situation (add one in commentary/script.json)</div></div><span></span></div>`;continue;}
+   for(const e of list){rows.push({ex:e});html+=exCard(e,i++,label,false);}}html+='</section>';}
+ const gone=(S.removed||[]).filter(e=>!q||JSON.stringify(e).toLowerCase().includes(q));if(gone.length){html+=`<section class="group"><div class="gh"><h2>Deleted</h2><span>${gone.length}</span><span class="desc">Restore puts the exchange and its audio back.</span></div>`;for(const e of gone){rows.push({ex:e,removed:true});html+=exCard(e,i++,'',true);}html+='</section>';}
+ $('#list').innerHTML=html;sel=Math.min(sel,rows.length-1);select(sel);
+ function exCard(e,i,label,removed){const fresh=!removed&&!com.reviewed[e.id];return `<div class="card row ${fresh?'fresh':''} ${i===sel?'sel':''}" data-i="${i}"><button class="play" data-a="cplay" title="Play (Space)">▶</button><div>${e.lines.map(l=>`<div class="line"><b class="${l.who}">${V[l.who]?.name||l.who}</b><span>${l.text.replace(/</g,'&lt;').replace(/\[([^\]]*)\]/g,'<i>[$1]</i>')}</span></div>`).join('')}<div class="cid">${e.moment} · ${e.when}${label?' — '+label:''} · ${e.id}${fresh?'<span class="new">new</span>':''}</div></div>
+  <div class="acts">${removed?'<button class="del" data-a="crestore">Restore</button>':`<button class="lis" data-a="clisten">${com.reviewed[e.id]?'✓ listened':'Mark listened (L)'}</button><button class="del" data-a="cdelete">Delete</button>`}</div></div>`;}}
+async function playExchange(i){const r=rows[i];if(!r?.ex)return;stop();const c=ac();await c.resume();const e=r.ex;const token={};playing={i,src:{stop(){token.stop=true;for(const s of srcs)try{s.stop()}catch{}}},btn:document.querySelector(`.row[data-i="${i}"] .play`)};const srcs=[];playing.btn?.classList.add('on');
+ const bufsE=await Promise.all(e.lines.map(async(l,k)=>{const f=`${e.id}-${k+1}-${l.who}.mp3`;const url=r.removed?'/__audio/trashfile/commentary/'+f:'/commentary/audio/'+f;const key='c:'+url;if(!bufs.has(key))bufs.set(key,fetch(url,{cache:'no-store'}).then(x=>x.arrayBuffer()).then(b=>c.decodeAudioData(b)));return bufs.get(key);}));
+ if(token.stop)return;let t=c.currentTime+.05;
+ bufsE.forEach((b,k)=>{const d=b.getChannelData(0),th=.012;let s0=0,e0=d.length-1;while(s0<d.length&&Math.abs(d[s0])<th)s0++;while(e0>s0&&Math.abs(d[e0])<th)e0--;let sum=0,n=0;for(let j=s0;j<=e0;j++)if(Math.abs(d[j])>th){sum+=d[j]*d[j];n++;}
+  const g=c.createGain();g.gain.value=Math.min(3,Math.max(.3,(.1/Math.max(Math.sqrt(sum/Math.max(n,1)),1e-4))**.65));g.connect(c.destination);const s=c.createBufferSource();s.buffer=b;s.connect(g);const a=Math.max(0,s0/b.sampleRate-.02),z=Math.min(b.duration,e0/b.sampleRate+.05);s.start(t,a,z-a);srcs.push(s);
+  const next=e.lines[k+1];t+=z-a+(next?(next.who==='darren'?.28:.46):0);});
+ setTimeout(()=>{if(playing?.i===i){playing.btn?.classList.remove('on');playing=null;}},(t-c.currentTime)*1000+100);}
+async function comAct(action,id,extra={}){const r=await fetch('/__audio/commentary-'+action,{method:'POST',body:JSON.stringify({id,...extra})});const j=await r.json();if(!r.ok)throw Error(j.error);}
+$('#list').addEventListener('click',async e=>{const el=e.target.closest('[data-a],[data-cmark]');if(!el||tab!=='commentary')return;if(el.dataset.cmark){for(const id of el.dataset.cmark.split('|'))await comAct('review',id);await load();return;}
+ const row=el.closest('.row');const i=+row.dataset.i,r=rows[i];const a=el.dataset.a;select(i);
+ try{if(a==='cplay')playExchange(i);if(a==='clisten'){await comAct('review',r.ex.id,{reviewed:!com.reviewed[r.ex.id]});await load();}
+  if(a==='cdelete'){stop();await comAct('delete',r.ex.id);await load();toast('Deleted '+r.ex.id,async()=>{await comAct('restore',r.ex.id);await load();});}
+  if(a==='crestore'){await comAct('restore',r.ex.id);await load();toast('Restored '+r.ex.id);}}catch(err){toast('⚠ '+err.message);}},true);
+addEventListener('keydown',e=>{if(e.target.matches('input,select'))return;const f=rows[sel];
+ if(tab==='commentary'){const r=rows[sel];if(e.key==='ArrowDown'){e.preventDefault();select(Math.min(rows.length-1,sel+1));}else if(e.key==='ArrowUp'){e.preventDefault();select(Math.max(0,sel-1));}else if(e.key===' '){e.preventDefault();if(playing?.i===sel)stop();else playExchange(sel);}else if(r&&!r.removed&&e.key.toLowerCase()==='l'){comAct('review',r.ex.id,{reviewed:!com.reviewed[r.ex.id]}).then(load);}else if(r&&!r.removed&&(e.key==='Backspace'||e.key==='Delete')){e.preventDefault();stop();comAct('delete',r.ex.id).then(load);}return;}
+ if(e.key==='ArrowDown'){e.preventDefault();select(Math.min(rows.length-1,sel+1));}else if(e.key==='ArrowUp'){e.preventDefault();select(Math.max(0,sel-1));}
+ else if(e.key===' '){e.preventDefault();play(sel);}else if(e.key.toLowerCase()==='w'&&f?.folder==='impact'){play(sel,true);}
+ else if(e.key.toLowerCase()==='l'&&f){listened(sel);}else if((e.key==='Backspace'||e.key==='Delete')&&f){e.preventDefault();remove(sel);}
+ else if(/^[1-9]$/.test(e.key)&&f&&f.area==='live'){const folder=f.folder==='_unused'?(tab==='_unused'?'impact':f.folder):f.folder;const kinds=data.folders[folder]||[];const k=kinds[+e.key-1];if(k)relabel(sel,folder+'/'+k);}});
+load().then(()=>{if(!data.files.some(f=>f.area==='live'&&!f.reviewed)&&tab==='new'){tab='impact';render();}}).catch(e=>{$('#list').innerHTML=`<p class="empty">The dev server on this port is an older version without the audio API.<br>Restart it: in its terminal press <kbd>Ctrl</kbd>+<kbd>C</kbd>, then run <code>npm start</code> again (or <code>lsof -ti:5173 | xargs kill; npm start</code>), and reload this page.<br><small>${e.message.replace(/</g,'&lt;').slice(0,160)}</small></p>`;});
+</script></body></html>

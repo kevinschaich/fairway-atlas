@@ -1,0 +1,15 @@
+/* The clubface diagram (an SVG drawn by game/impact-card.js). */
+.impact-face .icFaceShape{fill:url(#icMetal);stroke:#ffffff3d;stroke-width:.9}
+.impact-face .icHosel{fill:none;stroke:#ffffff33;stroke-width:5;stroke-linecap:round}
+.impact-face .icGroove{stroke:#ffffff1a;stroke-width:.7}
+.impact-face .icSight{stroke:#ffffff59;stroke-width:1.1}
+.impact-face .icSweet{fill:none;stroke:#ffffff2e;stroke-width:.8;stroke-dasharray:2 2}
+.impact-face .icCross{stroke:#ffffff47;stroke-width:.8}
+.impact-face .icSide{font:600 5px var(--font-sans);letter-spacing:.8px;fill:#ffffff59}
+.impact-face .icPast{fill:var(--hi,#fafafa);opacity:.22}
+.impact-face .icDot{fill:var(--hi,#fafafa);stroke:#212124;stroke-width:1.1;filter:drop-shadow(0 0 3px color-mix(in srgb,var(--hi,#fafafa) 70%,transparent));animation:icPop .45s cubic-bezier(.2,1.4,.4,1) both;transform-box:fill-box;transform-origin:center}
+.impact-face .icDot.icAssumed{fill:none;stroke:var(--hi,#fafafa);stroke-width:1;stroke-dasharray:1.6 1.4;filter:none;opacity:.7}
+.impact-face .icRing{fill:none;stroke:var(--hi,#fafafa);stroke-width:.8;opacity:0;animation:icRing 1s ease-out .1s both;transform-box:fill-box;transform-origin:center}
+@keyframes icPop{from{transform:scale(0)}}
+@keyframes icRing{0%{opacity:.8;transform:scale(1)}100%{opacity:0;transform:scale(3.2)}}
+@media (prefers-reduced-motion:reduce){.impact-face .icDot,.impact-face .icRing{animation:none}}

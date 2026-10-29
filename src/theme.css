@@ -1,0 +1,37 @@
+/* Tailwind, the components' zinc theme, and the one custom piece with its own CSS: the performance monitor
+   (game/perf-panel.js), kept in a low layer and pointed at the shared tokens. */
+@layer theme, base, legacy, components, utilities;
+@import "./game/perf-panel.css" layer(legacy);
+@import "tailwindcss";
+@import "@kevinschaich/components/theme.css";
+@import "@kevinschaich/components/styles.css";
+@source "../node_modules/@kevinschaich/components/dist";
+
+:root,
+.dark {
+    --ink: var(--foreground);
+    --fa-muted: var(--muted-foreground);
+    --line: var(--border);
+    --green: var(--foreground);
+    --lime: var(--primary);
+    --hi: var(--primary);
+    --hi-ink: var(--primary-foreground);
+    --card-line: var(--border);
+    --hud-line: var(--border);
+    --hud-eyebrow: var(--muted-foreground);
+    --card-radius: var(--radius);
+    --hud-radius: var(--radius);
+    --r: var(--radius);
+    /* the performance monitor's spacing */
+    --m: 16px;
+    --brow: 40px;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+}

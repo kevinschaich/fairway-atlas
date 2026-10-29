@@ -1,0 +1,2 @@
+- soil.png — derived from photo by Unsplash (rEIDzqczN7s, dark brown soil with clods), Unsplash License: https://unsplash.com/photos/rEIDzqczN7s
+- Full project credits (audio recordings, images): see /CREDITS.md at the repository root.

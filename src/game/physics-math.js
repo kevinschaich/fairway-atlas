@@ -1,0 +1,11 @@
+export const R=.021335,M=.04593,G=9.80665,I=.4*M*R*R;
+export const dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z;
+export const cross=(a,b)=>({x:a.y*b.z-a.z*b.y,y:a.z*b.x-a.x*b.z,z:a.x*b.y-a.y*b.x});
+export const length=a=>Math.hypot(a.x,a.y,a.z);
+export const scale=(a,s)=>({x:a.x*s,y:a.y*s,z:a.z*s});
+export const add=(a,b)=>({x:a.x+b.x,y:a.y+b.y,z:a.z+b.z});
+export const sub=(a,b)=>add(a,scale(b,-1));
+export const unit=a=>scale(a,1/(length(a)||1));
+export const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+export const zero=()=>({x:0,y:0,z:0});
+export const tangent=(v,n)=>sub(v,scale(n,dot(v,n)));

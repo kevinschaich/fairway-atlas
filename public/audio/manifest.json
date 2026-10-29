@@ -1,0 +1,733 @@
+{
+ "ambience": {
+  "birds": [
+   {
+    "file": "ambience/birds--fs565418.mp3",
+    "src": "565418"
+   }
+  ],
+  "desert": [
+   {
+    "file": "ambience/desert--fs697217.mp3",
+    "src": "697217"
+   }
+  ],
+  "distant-sea": [
+   {
+    "file": "ambience/distant-sea--fs710861.mp3",
+    "src": "710861"
+   }
+  ],
+  "gulls": [
+   {
+    "file": "ambience/gulls--fs162743.mp3",
+    "src": "162743"
+   }
+  ],
+  "lake": [
+   {
+    "file": "ambience/lake--fs198521.mp3",
+    "src": "198521"
+   }
+  ],
+  "meadow": [
+   {
+    "file": "ambience/meadow--fs639459.mp3",
+    "src": "639459"
+   }
+  ],
+  "night": [
+   {
+    "file": "ambience/night--fs328293.mp3",
+    "src": "328293"
+   }
+  ],
+  "surf": [
+   {
+    "file": "ambience/surf--fs623052.mp3",
+    "src": "623052"
+   }
+  ],
+  "tropical": [
+   {
+    "file": "ambience/tropical--fs653743.mp3",
+    "src": "653743"
+   }
+  ]
+ },
+ "whoosh": [
+  {
+   "file": "whoosh/whoosh--fs389590.mp3",
+   "src": "389590"
+  },
+  {
+   "file": "whoosh/whoosh--fs595067-01.mp3",
+   "src": "595067"
+  },
+  {
+   "file": "whoosh/whoosh--fs595067-02.mp3",
+   "src": "595067"
+  },
+  {
+   "file": "whoosh/whoosh--fs595067-03.mp3",
+   "src": "595067"
+  },
+  {
+   "file": "whoosh/whoosh--fs595067-04.mp3",
+   "src": "595067"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-01.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-02.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-03.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-04.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-05.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-06.mp3",
+   "src": "765602"
+  },
+  {
+   "file": "whoosh/whoosh--fs765602-07.mp3",
+   "src": "765602"
+  }
+ ],
+ "impact": {
+  "driver": [
+   {
+    "file": "impact/driver--fs121903-02.mp3",
+    "src": "121903"
+   },
+   {
+    "file": "impact/driver--fs18889-01.mp3",
+    "src": "18889"
+   },
+   {
+    "file": "impact/driver--fs593483-01.mp3",
+    "src": "593483"
+   }
+  ],
+  "hybrid": [
+   {
+    "file": "impact/hybrid--fs121903-05.mp3",
+    "src": "121903"
+   },
+   {
+    "file": "impact/hybrid--fs18889-01.mp3",
+    "src": "18889"
+   },
+   {
+    "file": "impact/hybrid--fs98334-02.mp3",
+    "src": "98334"
+   },
+   {
+    "file": "impact/hybrid--fs98334-03.mp3",
+    "src": "98334"
+   },
+   {
+    "file": "impact/hybrid--fs98334-04.mp3",
+    "src": "98334"
+   }
+  ],
+  "iron": [
+   {
+    "file": "impact/iron--fs121903-01.mp3",
+    "src": "121903"
+   },
+   {
+    "file": "impact/iron--fs618225.mp3",
+    "src": "618225"
+   },
+   {
+    "file": "impact/iron--fs742843-05.mp3",
+    "src": "742843"
+   }
+  ],
+  "putter": [
+   {
+    "file": "impact/putter--fs119451-01.mp3",
+    "src": "119451"
+   },
+   {
+    "file": "impact/putter--fs402994-03.mp3",
+    "src": "402994"
+   },
+   {
+    "file": "impact/putter--fs402994-04.mp3",
+    "src": "402994"
+   },
+   {
+    "file": "impact/putter--fs408260-01.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs408260-02.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs408260-05.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs408260-06.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs408260-07.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs408260-08.mp3",
+    "src": "408260"
+   },
+   {
+    "file": "impact/putter--fs622415-02.mp3",
+    "src": "622415"
+   },
+   {
+    "file": "impact/putter--fs622415-06.mp3",
+    "src": "622415"
+   },
+   {
+    "file": "impact/putter--fs622415-07.mp3",
+    "src": "622415"
+   }
+  ],
+  "wedge": [
+   {
+    "file": "impact/wedge--fs98334-01.mp3",
+    "src": "98334"
+   }
+  ],
+  "wood": [
+   {
+    "file": "impact/wood--fs18889-02.mp3",
+    "src": "18889"
+   },
+   {
+    "file": "impact/wood--fs18898-01.mp3",
+    "src": "18898"
+   },
+   {
+    "file": "impact/wood--fs441782-01.mp3",
+    "src": "441782"
+   },
+   {
+    "file": "impact/wood--fs441782-02.mp3",
+    "src": "441782"
+   },
+   {
+    "file": "impact/wood--fs441782-03.mp3",
+    "src": "441782"
+   }
+  ]
+ },
+ "land": {
+  "cup": [
+   {
+    "file": "land/cup--fs21878-01.mp3",
+    "src": "21878"
+   },
+   {
+    "file": "land/cup--fs21878-02.mp3",
+    "src": "21878"
+   },
+   {
+    "file": "land/cup--fs593482-01.mp3",
+    "src": "593482"
+   },
+   {
+    "file": "land/cup--fs593482-02.mp3",
+    "src": "593482"
+   },
+   {
+    "file": "land/cup--fs593482-03.mp3",
+    "src": "593482"
+   }
+  ],
+  "fairway": [
+   {
+    "file": "land/fairway--fs662258-01.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/fairway--fs662258-04.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/fairway--fs662258-07.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/fairway--fs662258-10.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/fairway--fs662258-13.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/fairway--fs662258-16.mp3",
+    "src": "662258"
+   }
+  ],
+  "green": [
+   {
+    "file": "land/green--fs662258-02.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/green--fs662258-05.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/green--fs662258-08.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/green--fs662258-11.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/green--fs662258-14.mp3",
+    "src": "662258"
+   },
+   {
+    "file": "land/green--fs662258-17.mp3",
+    "src": "662258"
+   }
+  ],
+  "rough": [
+   {
+    "file": "land/rough--fs650976-01.mp3",
+    "src": "650976"
+   },
+   {
+    "file": "land/rough--fs650976-02.mp3",
+    "src": "650976"
+   }
+  ],
+  "sand": [
+   {
+    "file": "land/sand--fs319216-01.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-02.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-03.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-04.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-05.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-06.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-07.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-08.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-09.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-10.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-11.mp3",
+    "src": "319216"
+   },
+   {
+    "file": "land/sand--fs319216-12.mp3",
+    "src": "319216"
+   }
+  ],
+  "water": [
+   {
+    "file": "land/water--fs404829-01.mp3",
+    "src": "404829"
+   },
+   {
+    "file": "land/water--fs583348-01.mp3",
+    "src": "583348"
+   }
+  ]
+ },
+ "credits": [
+  {
+   "id": "408260",
+   "title": "putt.wav",
+   "author": "170129",
+   "url": "https://freesound.org/people/170129/sounds/408260/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "putter impact"
+   ]
+  },
+  {
+   "id": "18889",
+   "title": "GolfTeeOff2.flac",
+   "author": "acclivity",
+   "url": "https://freesound.org/people/acclivity/sounds/18889/",
+   "license": "CC BY-NC 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+   "usedFor": [
+    "driver impact",
+    "hybrid impact",
+    "wood impact"
+   ]
+  },
+  {
+   "id": "18898",
+   "title": "GolfTeeOff1.flac",
+   "author": "acclivity",
+   "url": "https://freesound.org/people/acclivity/sounds/18898/",
+   "license": "CC BY-NC 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+   "usedFor": [
+    "wood impact"
+   ]
+  },
+  {
+   "id": "121903",
+   "title": "Powerful_golfball_hits.wav",
+   "author": "CGEffex",
+   "url": "https://freesound.org/people/CGEffex/sounds/121903/",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "usedFor": [
+    "driver impact",
+    "hybrid impact",
+    "iron impact"
+   ]
+  },
+  {
+   "id": "98334",
+   "title": "Golf.wav",
+   "author": "CGEffex",
+   "url": "https://freesound.org/people/CGEffex/sounds/98334/",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+   "usedFor": [
+    "hybrid impact",
+    "wedge impact"
+   ]
+  },
+  {
+   "id": "565418",
+   "title": "sing birds spring.WAV",
+   "author": "cupido-1",
+   "url": "https://freesound.org/people/cupido-1/sounds/565418/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "birds ambience"
+   ]
+  },
+  {
+   "id": "765602",
+   "title": "Golf Swing variation",
+   "author": "Curtis_Alben",
+   "url": "https://freesound.org/people/Curtis_Alben/sounds/765602/",
+   "license": "CC BY-NC 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
+   "usedFor": [
+    "whoosh"
+   ]
+  },
+  {
+   "id": "697217",
+   "title": "Looping Gentle Wind Ambience on an Open Desert Plain.wav",
+   "author": "dhallcomposer",
+   "url": "https://freesound.org/people/dhallcomposer/sounds/697217/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "desert ambience"
+   ]
+  },
+  {
+   "id": "328293",
+   "title": "Forest at night, crickets, cicadas and insects in the Sian Ka'an Biosphere Reserve",
+   "author": "felix.blume",
+   "url": "https://freesound.org/people/felix.blume/sounds/328293/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "night ambience"
+   ]
+  },
+  {
+   "id": "583348",
+   "title": "Rock Splash",
+   "author": "Fission9",
+   "url": "https://freesound.org/people/Fission9/sounds/583348/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball landing on water"
+   ]
+  },
+  {
+   "id": "622415",
+   "title": "golf ball hits stereo.wav",
+   "author": "fluctuating_frequency",
+   "url": "https://freesound.org/people/fluctuating_frequency/sounds/622415/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "putter impact"
+   ]
+  },
+  {
+   "id": "639459",
+   "title": "summer meadow with wind",
+   "author": "Garuda1982",
+   "url": "https://freesound.org/people/Garuda1982/sounds/639459/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "meadow ambience"
+   ]
+  },
+  {
+   "id": "623052",
+   "title": "Ocean Waves on Beach",
+   "author": "goochiano",
+   "url": "https://freesound.org/people/goochiano/sounds/623052/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "surf ambience"
+   ]
+  },
+  {
+   "id": "21878",
+   "title": "golf_putting.wav",
+   "author": "inbeeld",
+   "url": "https://freesound.org/people/inbeeld/sounds/21878/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball in the cup"
+   ]
+  },
+  {
+   "id": "742843",
+   "title": "Driving Range Swings",
+   "author": "itinerantmonk108",
+   "url": "https://freesound.org/people/itinerantmonk108/sounds/742843/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "iron impact"
+   ]
+  },
+  {
+   "id": "662258",
+   "title": "Tennis Bounce Ball on Grass",
+   "author": "jamesdrake89",
+   "url": "https://freesound.org/people/jamesdrake89/sounds/662258/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball landing on fairway",
+    "ball landing on green"
+   ]
+  },
+  {
+   "id": "595067",
+   "title": "Golf club swinging,OWI.wav",
+   "author": "JaredPaulOW",
+   "url": "https://freesound.org/people/JaredPaulOW/sounds/595067/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "whoosh"
+   ]
+  },
+  {
+   "id": "198521",
+   "title": "lake waves seagulls .wav",
+   "author": "jazbavac",
+   "url": "https://freesound.org/people/jazbavac/sounds/198521/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "lake ambience"
+   ]
+  },
+  {
+   "id": "441782",
+   "title": "Golf woods strike sounds",
+   "author": "JJDG",
+   "url": "https://freesound.org/people/JJDG/sounds/441782/",
+   "license": "CC BY-NC 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-nc/3.0/",
+   "usedFor": [
+    "wood impact"
+   ]
+  },
+  {
+   "id": "389590",
+   "title": "Swing Woosh",
+   "author": "Jofae",
+   "url": "https://freesound.org/people/Jofae/sounds/389590/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "whoosh"
+   ]
+  },
+  {
+   "id": "119451",
+   "title": "Golf Ball Putt.wav",
+   "author": "lmbubec",
+   "url": "https://freesound.org/people/lmbubec/sounds/119451/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "putter impact"
+   ]
+  },
+  {
+   "id": "162743",
+   "title": "shoreline_waves_seagulls.wav",
+   "author": "mannhawks",
+   "url": "https://freesound.org/people/mannhawks/sounds/162743/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "gulls ambience"
+   ]
+  },
+  {
+   "id": "402994",
+   "title": "golf club hit series.wav",
+   "author": "Mikes-MultiMedia",
+   "url": "https://freesound.org/people/Mikes-MultiMedia/sounds/402994/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "putter impact"
+   ]
+  },
+  {
+   "id": "710861",
+   "title": "Ocean-Far-Away+Construction-Sound+Birds",
+   "author": "NapierFreesound",
+   "url": "https://freesound.org/people/NapierFreesound/sounds/710861/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "distant-sea ambience"
+   ]
+  },
+  {
+   "id": "650976",
+   "title": "Bouncy Ball Bouncing on Dry Grass",
+   "author": "NathanaelBray",
+   "url": "https://freesound.org/people/NathanaelBray/sounds/650976/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball landing on rough"
+   ]
+  },
+  {
+   "id": "404829",
+   "title": "Water splash",
+   "author": "nilbul",
+   "url": "https://freesound.org/people/nilbul/sounds/404829/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball landing on water"
+   ]
+  },
+  {
+   "id": "653743",
+   "title": "Peruvian Amazon birds frogs daytime",
+   "author": "nonamethefish",
+   "url": "https://freesound.org/people/nonamethefish/sounds/653743/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "tropical ambience"
+   ]
+  },
+  {
+   "id": "593482",
+   "title": "Golf ball in hole.wav",
+   "author": "Scottrex05",
+   "url": "https://freesound.org/people/Scottrex05/sounds/593482/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball in the cup"
+   ]
+  },
+  {
+   "id": "593483",
+   "title": "Driver hitting golf ball.wav",
+   "author": "Scottrex05",
+   "url": "https://freesound.org/people/Scottrex05/sounds/593483/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "driver impact"
+   ]
+  },
+  {
+   "id": "319216",
+   "title": "Stick into soft dirt.wav",
+   "author": "worthahep88",
+   "url": "https://freesound.org/people/worthahep88/sounds/319216/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "ball landing on sand"
+   ]
+  },
+  {
+   "id": "618225",
+   "title": "chip_17_sand.wav",
+   "author": "yukon456",
+   "url": "https://freesound.org/people/yukon456/sounds/618225/",
+   "license": "CC0 1.0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "usedFor": [
+    "iron impact"
+   ]
+  }
+ ]
+}

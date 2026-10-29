@@ -1,0 +1,2321 @@
+{
+ "about": "Fairway Atlas commentary. Two voices trade call-and-response lines at five moments of play. Each exchange is one option for a (moment, situation) pair; add more exchanges with the same moment + situation and the game picks one at random. Edit or add here, then run `npm run commentary` to (re)generate the audio in dist/commentary/audio/ (only new or changed lines are sent to ElevenLabs). Delete exchanges in the Audio lab (Commentary tab) or here. Bracketed tags like [laughs] are ElevenLabs v3 audio tags: performed by voices on eleven_v3, stripped for voices on eleven_multilingual_v2.",
+ "voices": {
+  "dale": {
+   "name": "Dale",
+   "fullName": "Dale Whitcomb",
+   "character": "Calm, measured American play-by-play. Understated and dry; states what happened in as few words as possible (\"It's offline, no question.\", \"Little too much pace on that one.\"). The straight man. Warm, never smug.",
+   "voiceId": "1h6Vu5eiuZ2lJKAGBlUi",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.8,
+    "style": 0.15
+   }
+  },
+  "darren": {
+   "name": "Darren",
+   "fullName": "Darren \"Dazza\" Buckley",
+   "character": "Excitable Australian colour man with a short fuse for joy. Reacts in bursts, often two or three words (\"SEND IT!\", \"Super tidy.\", \"Yep. Clear the runway.\"). Loud when it's earned, deadpan when it isn't. Adores Dale. Dale calls him Darren; \"Dazza\" only slips out now and then.",
+   "voiceId": "0XmtFJxHkZtY5uUOJEAc",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.3,
+    "similarity_boost": 0.8,
+    "style": 0.6
+   }
+  }
+ },
+ "moments": {
+  "welcome": {
+   "plays": "Once per session, before the first hole's intro: the booth introduces itself.",
+   "situations": {
+    "session": "Start of the broadcast"
+   }
+  },
+  "intro": {
+   "plays": "At the tee before the first stroke of a hole.",
+   "situations": {
+    "par3": "Par 3",
+    "par4": "Par 4",
+    "par5": "Par 5"
+   }
+  },
+  "launch": {
+   "plays": "Just after impact on tee and approach shots (not putts, not short chips), while the ball is in the air.",
+   "situations": {
+    "great": "Flushed: finishing on the green near the pin, or a full-length drive in the fairway",
+    "good": "Solid, nothing special",
+    "short": "Mishit: well short of what the club should carry",
+    "wayward": "Well offline, heading for rough or sand",
+    "trouble": "Heading for water or out of bounds"
+   }
+  },
+  "land": {
+   "plays": "When a non-putt comes to rest.",
+   "situations": {
+    "holed": "Holed out from off the green (not a hole-in-one; that is hole/ace)",
+    "green-close": "On the green within 3 m of the pin",
+    "green": "On the green",
+    "fairway": "Fairway (or tee box)",
+    "rough": "Rough / natural areas",
+    "bunker": "Bunker",
+    "water": "In the water (penalty)",
+    "ob": "Out of bounds (penalty)"
+   }
+  },
+  "putt": {
+   "plays": "When a putt comes to rest.",
+   "situations": {
+    "holed-long": "Holed from more than 4 m",
+    "holed-short": "Holed from 4 m or less",
+    "near-miss": "Missed, finishing within 60 cm (lip-outs, burned edges)",
+    "short": "Missed short",
+    "long": "Missed past the hole",
+    "awful": "Missed badly: still more than 3 m away and not even half way there"
+   }
+  },
+  "hole": {
+   "plays": "When the hole is finished, right after the shot's line.",
+   "situations": {
+    "ace": "Hole in one",
+    "albatross": "3 under par",
+    "eagle": "2 under",
+    "birdie": "1 under",
+    "par": "Par",
+    "bogey": "1 over",
+    "double": "2 over",
+    "worse": "3 or more over"
+   }
+  }
+ },
+ "exchanges": [
+  {
+   "id": "welcome-session-01",
+   "moment": "welcome",
+   "when": "session",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Good afternoon, and welcome along. I'm Dale Whitcomb, and alongside me as always, Darren Buckley."
+    },
+    {
+     "who": "darren",
+     "text": "G'day, g'day. Darren here. Dazza to me mum. Let's call some golf."
+    }
+   ]
+  },
+  {
+   "id": "intro-par3-01",
+   "moment": "intro",
+   "when": "par3",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Par three. One swing to find the green."
+    },
+    {
+     "who": "darren",
+     "text": "No pressure."
+    }
+   ]
+  },
+  {
+   "id": "intro-par4-01",
+   "moment": "intro",
+   "when": "par4",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Par four. Beautiful day for it."
+    },
+    {
+     "who": "dale",
+     "text": "Find the fairway and it opens right up."
+    }
+   ]
+  },
+  {
+   "id": "intro-par5-01",
+   "moment": "intro",
+   "when": "par5",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Long par five here."
+    },
+    {
+     "who": "darren",
+     "text": "Grip it and rip it."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-01",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[shouting] OHHH, striped!"
+    },
+    {
+     "who": "dale",
+     "text": "Right out of the screws."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-02",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Oh, that is pure."
+    },
+    {
+     "who": "darren",
+     "text": "Listen to that."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-03",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Get up! Actually... no, stay right there."
+    },
+    {
+     "who": "dale",
+     "text": "Tracking beautifully."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-04",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Best swing of the day."
+    },
+    {
+     "who": "darren",
+     "text": "By a mile."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-05",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Look at the height on that."
+    },
+    {
+     "who": "dale",
+     "text": "Towering. Dead on line."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-06",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Middle of the face."
+    },
+    {
+     "who": "darren",
+     "text": "Beautiful."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-07",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "SEND IT!"
+    },
+    {
+     "who": "dale",
+     "text": "Oh yeah. Signed, sealed and delivered."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-08",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Gorgeous tempo."
+    },
+    {
+     "who": "darren",
+     "text": "Silky."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-09",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Flushed it."
+    },
+    {
+     "who": "dale",
+     "text": "Right out of the middle."
+    }
+   ]
+  },
+  {
+   "id": "launch-great-10",
+   "moment": "launch",
+   "when": "great",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "[chuckles] Crowd's gone quiet."
+    },
+    {
+     "who": "darren",
+     "text": "That's respect, that is."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-01",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Good contact. That's on a nice line."
+    },
+    {
+     "who": "darren",
+     "text": "Super tidy."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-02",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Decent strike."
+    },
+    {
+     "who": "dale",
+     "text": "That'll play."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-03",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Nice and controlled."
+    },
+    {
+     "who": "darren",
+     "text": "Yeah, lovely."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-04",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Bit of a draw on it."
+    },
+    {
+     "who": "dale",
+     "text": "Working it nicely."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-05",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Solid enough."
+    },
+    {
+     "who": "darren",
+     "text": "No complaints."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-06",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "That's alright, that is."
+    },
+    {
+     "who": "dale",
+     "text": "In play. Right direction."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-07",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Good strike. Let's see where it finishes."
+    },
+    {
+     "who": "darren",
+     "text": "Come on..."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-08",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Workmanlike."
+    },
+    {
+     "who": "dale",
+     "text": "Gets the job done."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-09",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Little thin, but it'll run."
+    },
+    {
+     "who": "darren",
+     "text": "It'll do."
+    }
+   ]
+  },
+  {
+   "id": "launch-good-10",
+   "moment": "launch",
+   "when": "good",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Good, not great."
+    },
+    {
+     "who": "dale",
+     "text": "Fair assessment."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-01",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[wincing] Ohh, heavy."
+    },
+    {
+     "who": "dale",
+     "text": "Took a lot of turf there."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-02",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Caught that heavy."
+    },
+    {
+     "who": "darren",
+     "text": "Ooh. Yeah."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-03",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Topped it."
+    },
+    {
+     "who": "dale",
+     "text": "Not the contact they wanted."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-04",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Off the toe. It won't get there."
+    },
+    {
+     "who": "darren",
+     "text": "Nowhere near."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-05",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Chunked it."
+    },
+    {
+     "who": "dale",
+     "text": "Ground got there first."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-06",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That's well short."
+    },
+    {
+     "who": "darren",
+     "text": "Well, well short."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-07",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Oof. Fat."
+    },
+    {
+     "who": "dale",
+     "text": "That'll come up short."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-08",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Caught that a little thin."
+    },
+    {
+     "who": "darren",
+     "text": "Yeah, that's not getting there."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-09",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Ohh. Did they look up?"
+    },
+    {
+     "who": "dale",
+     "text": "Looked like it."
+    }
+   ]
+  },
+  {
+   "id": "launch-short-10",
+   "moment": "launch",
+   "when": "short",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "You'll feel that one in the hands."
+    },
+    {
+     "who": "darren",
+     "text": "[winces] Stings."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-01",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That one's leaking."
+    },
+    {
+     "who": "darren",
+     "text": "And it's not coming back."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-02",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "FORE!"
+    },
+    {
+     "who": "dale",
+     "text": "Heading for the crowd."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-03",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "It's hooking. A lot."
+    },
+    {
+     "who": "darren",
+     "text": "Oh, that's a big hook."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-04",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Big slice."
+    },
+    {
+     "who": "dale",
+     "text": "Tough second shot from there."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-05",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Started left, stayed left."
+    },
+    {
+     "who": "darren",
+     "text": "Committed to it, at least."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-06",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Wrong way!"
+    },
+    {
+     "who": "dale",
+     "text": "Well offline."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-07",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Drifting toward the gallery."
+    },
+    {
+     "who": "darren",
+     "text": "Heads up!"
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-08",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "That crab is WALKIN'!"
+    },
+    {
+     "who": "dale",
+     "text": "It's offline, no question."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-09",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Face was wide open."
+    },
+    {
+     "who": "darren",
+     "text": "Yep. Sliced it."
+    }
+   ]
+  },
+  {
+   "id": "launch-wayward-10",
+   "moment": "launch",
+   "when": "wayward",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Ohh, that's a big hook."
+    },
+    {
+     "who": "dale",
+     "text": "Big hook. That's trouble."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-01",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "No no no no."
+    },
+    {
+     "who": "dale",
+     "text": "That's headed for trouble."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-02",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Uh oh."
+    },
+    {
+     "who": "darren",
+     "text": "Yeah. That's trouble."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-03",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Oh no. No no no."
+    },
+    {
+     "who": "dale",
+     "text": "Not coming back from that."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-04",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That's going somewhere it shouldn't."
+    },
+    {
+     "who": "darren",
+     "text": "Oh dear."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-05",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "That's gone rogue."
+    },
+    {
+     "who": "dale",
+     "text": "Rarely ends well."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-06",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That'll be a penalty stroke."
+    },
+    {
+     "who": "darren",
+     "text": "Ugh."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-07",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Danger zone."
+    },
+    {
+     "who": "dale",
+     "text": "Straight into it."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-08",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "I've seen enough."
+    },
+    {
+     "who": "darren",
+     "text": "[groans] Me too."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-09",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "That's got no chance."
+    },
+    {
+     "who": "dale",
+     "text": "None whatsoever."
+    }
+   ]
+  },
+  {
+   "id": "launch-trouble-10",
+   "moment": "launch",
+   "when": "trouble",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That's one they'll want back."
+    },
+    {
+     "who": "darren",
+     "text": "Straight away."
+    }
+   ]
+  },
+  {
+   "id": "land-holed-01",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Wait... it's in!"
+    },
+    {
+     "who": "darren",
+     "text": "[screaming] GET IN THE HOLE!"
+    }
+   ]
+  },
+  {
+   "id": "land-holed-02",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "IT'S IN!"
+    },
+    {
+     "who": "dale",
+     "text": "Holed it. Magnificent."
+    }
+   ]
+  },
+  {
+   "id": "land-holed-03",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Tracking... and it drops!"
+    },
+    {
+     "who": "darren",
+     "text": "Unbelievable!"
+    }
+   ]
+  },
+  {
+   "id": "land-holed-04",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Did that just go in?"
+    },
+    {
+     "who": "dale",
+     "text": "It did."
+    }
+   ]
+  },
+  {
+   "id": "land-holed-05",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Won't need the putter."
+    },
+    {
+     "who": "darren",
+     "text": "Ha! Not today!"
+    }
+   ]
+  },
+  {
+   "id": "land-holed-06",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "JARRED IT!"
+    },
+    {
+     "who": "dale",
+     "text": "From way out there."
+    }
+   ]
+  },
+  {
+   "id": "land-holed-07",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "You've got to be kidding. It's in!"
+    },
+    {
+     "who": "darren",
+     "text": "Dale said kidding!"
+    }
+   ]
+  },
+  {
+   "id": "land-holed-08",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "One bounce, two... gone!"
+    },
+    {
+     "who": "dale",
+     "text": "Right in the cup."
+    }
+   ]
+  },
+  {
+   "id": "land-holed-09",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Holed out. The crowd's on its feet."
+    },
+    {
+     "who": "darren",
+     "text": "So am I!"
+    }
+   ]
+  },
+  {
+   "id": "land-holed-10",
+   "moment": "land",
+   "when": "holed",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[breathless] That went in!"
+    },
+    {
+     "who": "dale",
+     "text": "Take a minute, Darren."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-01",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Oh, that's a DART!"
+    },
+    {
+     "who": "dale",
+     "text": "Kick-in range."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-02",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Tight to the flag."
+    },
+    {
+     "who": "darren",
+     "text": "Cuddling it."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-03",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Pin high. Stiff."
+    },
+    {
+     "who": "dale",
+     "text": "About as close as you'll see."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-04",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Tap-in distance."
+    },
+    {
+     "who": "darren",
+     "text": "Lovely."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-05",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Oh, that's got eyes."
+    },
+    {
+     "who": "dale",
+     "text": "Nearly went in."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-06",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Right at the flag the whole way."
+    },
+    {
+     "who": "darren",
+     "text": "Never left it."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-07",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "It's checking up... stop!"
+    },
+    {
+     "who": "dale",
+     "text": "And it stops. Perfect."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-08",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Inside three feet."
+    },
+    {
+     "who": "darren",
+     "text": "STIFF!"
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-09",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Another dart."
+    },
+    {
+     "who": "dale",
+     "text": "Clinical."
+    }
+   ]
+  },
+  {
+   "id": "land-green-close-10",
+   "moment": "land",
+   "when": "green-close",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Putter barely has to come out of the bag."
+    },
+    {
+     "who": "darren",
+     "text": "Barely."
+    }
+   ]
+  },
+  {
+   "id": "land-green-01",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Safely on the green."
+    },
+    {
+     "who": "darren",
+     "text": "Two putts and go."
+    }
+   ]
+  },
+  {
+   "id": "land-green-02",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "On the dance floor."
+    },
+    {
+     "who": "dale",
+     "text": "Now the work starts."
+    }
+   ]
+  },
+  {
+   "id": "land-green-03",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Green in regulation."
+    },
+    {
+     "who": "darren",
+     "text": "Very tidy."
+    }
+   ]
+  },
+  {
+   "id": "land-green-04",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Found the green."
+    },
+    {
+     "who": "dale",
+     "text": "Safe and sensible."
+    }
+   ]
+  },
+  {
+   "id": "land-green-05",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "On, but a long way from the hole."
+    },
+    {
+     "who": "darren",
+     "text": "Big putt coming."
+    }
+   ]
+  },
+  {
+   "id": "land-green-06",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Green's green."
+    },
+    {
+     "who": "dale",
+     "text": "[chuckles] Can't argue with that."
+    }
+   ]
+  },
+  {
+   "id": "land-green-07",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Middle of the green."
+    },
+    {
+     "who": "darren",
+     "text": "Never a bad play."
+    }
+   ]
+  },
+  {
+   "id": "land-green-08",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "It's on."
+    },
+    {
+     "who": "dale",
+     "text": "That'll do."
+    }
+   ]
+  },
+  {
+   "id": "land-green-09",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Stays on. Just."
+    },
+    {
+     "who": "darren",
+     "text": "Just is plenty."
+    }
+   ]
+  },
+  {
+   "id": "land-green-10",
+   "moment": "land",
+   "when": "green",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Green!"
+    },
+    {
+     "who": "dale",
+     "text": "Right where they wanted it."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-01",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Down the middle!"
+    },
+    {
+     "who": "dale",
+     "text": "Right down the gut."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-02",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Middle of the fairway."
+    },
+    {
+     "who": "darren",
+     "text": "Beautiful."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-03",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Short grass."
+    },
+    {
+     "who": "dale",
+     "text": "Great angle in."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-04",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Fairway. Everything in front of them."
+    },
+    {
+     "who": "darren",
+     "text": "Go get it."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-05",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Look at it run!"
+    },
+    {
+     "who": "dale",
+     "text": "Plenty of extra yards."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-06",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Just what the doctor ordered."
+    },
+    {
+     "who": "darren",
+     "text": "Lovely stuff."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-07",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Split the fairway."
+    },
+    {
+     "who": "dale",
+     "text": "Couldn't ask for more."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-08",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Short grass. That's all you want."
+    },
+    {
+     "who": "darren",
+     "text": "Yep."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-09",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Safe as houses."
+    },
+    {
+     "who": "dale",
+     "text": "No drama."
+    }
+   ]
+  },
+  {
+   "id": "land-fairway-10",
+   "moment": "land",
+   "when": "fairway",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Fairway, and a flat lie."
+    },
+    {
+     "who": "darren",
+     "text": "Perfect."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-01",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Into the rough."
+    },
+    {
+     "who": "darren",
+     "text": "Tricky lie, that."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-02",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Long stuff."
+    },
+    {
+     "who": "dale",
+     "text": "That'll make it interesting."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-03",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Just in the first cut."
+    },
+    {
+     "who": "darren",
+     "text": "Not bad."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-04",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[groans] Deep rough."
+    },
+    {
+     "who": "dale",
+     "text": "Just get it back out."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-05",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Sitting down in the rough."
+    },
+    {
+     "who": "darren",
+     "text": "Yeah, that's a tough one."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-06",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Cabbage."
+    },
+    {
+     "who": "dale",
+     "text": "Tough lie from there."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-07",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Missed the fairway, but not by much."
+    },
+    {
+     "who": "darren",
+     "text": "Not by much."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-08",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Where'd it go? ...Oh, there it is."
+    },
+    {
+     "who": "dale",
+     "text": "In the rough."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-09",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Could've been a lot worse."
+    },
+    {
+     "who": "darren",
+     "text": "Could've."
+    }
+   ]
+  },
+  {
+   "id": "land-rough-10",
+   "moment": "land",
+   "when": "rough",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[whispering] Shh. Don't startle it."
+    },
+    {
+     "who": "dale",
+     "text": "[chuckles] It's not going anywhere."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-01",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Found the beach."
+    },
+    {
+     "who": "dale",
+     "text": "Up and down from there is tough."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-02",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That's in the bunker."
+    },
+    {
+     "who": "darren",
+     "text": "Ohh. Sand."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-03",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Sand trap."
+    },
+    {
+     "who": "dale",
+     "text": "Let's hope it's a good lie."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-04",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Found the sand."
+    },
+    {
+     "who": "darren",
+     "text": "Magnet, that bunker."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-05",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Kitty litter."
+    },
+    {
+     "who": "dale",
+     "text": "Bunker shot coming up."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-06",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Middle of the bunker."
+    },
+    {
+     "who": "darren",
+     "text": "Bring a bucket and spade."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-07",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Why is it always sand?"
+    },
+    {
+     "who": "dale",
+     "text": "[chuckles] Because it's there."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-08",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Just trickled in. Unlucky."
+    },
+    {
+     "who": "darren",
+     "text": "So unlucky."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-09",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Beach."
+    },
+    {
+     "who": "dale",
+     "text": "Let's hope it's sitting up."
+    }
+   ]
+  },
+  {
+   "id": "land-bunker-10",
+   "moment": "land",
+   "when": "bunker",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Into the sand, I'm afraid."
+    },
+    {
+     "who": "darren",
+     "text": "Sand in the shoes now."
+    }
+   ]
+  },
+  {
+   "id": "land-water-01",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "And... that's wet."
+    },
+    {
+     "who": "darren",
+     "text": "SPLASH."
+    }
+   ]
+  },
+  {
+   "id": "land-water-02",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "It's gone for a swim."
+    },
+    {
+     "who": "dale",
+     "text": "Won't be coming back."
+    }
+   ]
+  },
+  {
+   "id": "land-water-03",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Found the water."
+    },
+    {
+     "who": "darren",
+     "text": "Glug glug."
+    }
+   ]
+  },
+  {
+   "id": "land-water-04",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Straight in the drink."
+    },
+    {
+     "who": "dale",
+     "text": "Penalty stroke."
+    }
+   ]
+  },
+  {
+   "id": "land-water-05",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Water claims another one."
+    },
+    {
+     "who": "darren",
+     "text": "Always does."
+    }
+   ]
+  },
+  {
+   "id": "land-water-06",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "...and it's wet."
+    },
+    {
+     "who": "dale",
+     "text": "That'll cost a shot."
+    }
+   ]
+  },
+  {
+   "id": "land-water-07",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Wet. Take the drop."
+    },
+    {
+     "who": "darren",
+     "text": "Reload."
+    }
+   ]
+  },
+  {
+   "id": "land-water-08",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Made a splash."
+    },
+    {
+     "who": "dale",
+     "text": "Literally."
+    }
+   ]
+  },
+  {
+   "id": "land-water-09",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "In the hazard."
+    },
+    {
+     "who": "darren",
+     "text": "Hazard's right."
+    }
+   ]
+  },
+  {
+   "id": "land-water-10",
+   "moment": "land",
+   "when": "water",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Fish food."
+    },
+    {
+     "who": "dale",
+     "text": "[sighs] One more for the pond."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-01",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "That's gone into the next postcode."
+    },
+    {
+     "who": "dale",
+     "text": "Out of bounds."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-02",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Out of bounds, I'm afraid."
+    },
+    {
+     "who": "darren",
+     "text": "Gone."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-03",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Over the fence!"
+    },
+    {
+     "who": "dale",
+     "text": "Stroke and distance."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-04",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "White stakes. That's out."
+    },
+    {
+     "who": "darren",
+     "text": "Way out."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-05",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Gone. Not coming back."
+    },
+    {
+     "who": "dale",
+     "text": "Play another."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-06",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "It's left the golf course."
+    },
+    {
+     "who": "darren",
+     "text": "Emigrated."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-07",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Car park!"
+    },
+    {
+     "who": "dale",
+     "text": "Out of bounds. Reload."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-08",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Out of bounds. That hurts."
+    },
+    {
+     "who": "darren",
+     "text": "Felt that one."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-09",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[laughs] That's so far out."
+    },
+    {
+     "who": "dale",
+     "text": "Miles out."
+    }
+   ]
+  },
+  {
+   "id": "land-ob-10",
+   "moment": "land",
+   "when": "ob",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "That ball has left the property."
+    },
+    {
+     "who": "darren",
+     "text": "Call it a taxi."
+    }
+   ]
+  },
+  {
+   "id": "putt-holed-long-01",
+   "moment": "putt",
+   "when": "holed-long",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "This has a chance... in!"
+    },
+    {
+     "who": "darren",
+     "text": "[screaming] FROM DOWNTOWN!"
+    }
+   ]
+  },
+  {
+   "id": "putt-holed-short-01",
+   "moment": "putt",
+   "when": "holed-short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Knock it in."
+    },
+    {
+     "who": "dale",
+     "text": "Never in doubt."
+    }
+   ]
+  },
+  {
+   "id": "putt-near-miss-01",
+   "moment": "putt",
+   "when": "near-miss",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Lipped out."
+    },
+    {
+     "who": "darren",
+     "text": "[groans] Ohh, so close."
+    }
+   ]
+  },
+  {
+   "id": "putt-short-01",
+   "moment": "putt",
+   "when": "short",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Left it short."
+    },
+    {
+     "who": "dale",
+     "text": "Never up, never in."
+    }
+   ]
+  },
+  {
+   "id": "putt-long-01",
+   "moment": "putt",
+   "when": "long",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Little too much pace on that one."
+    },
+    {
+     "who": "darren",
+     "text": "Yep. Clear the runway."
+    }
+   ]
+  },
+  {
+   "id": "putt-awful-01",
+   "moment": "putt",
+   "when": "awful",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[winces] Oh no."
+    },
+    {
+     "who": "dale",
+     "text": "That putter feels heavy right now."
+    }
+   ]
+  },
+  {
+   "id": "hole-ace-01",
+   "moment": "hole",
+   "when": "ace",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[shrieking] HOLE IN ONE!"
+    },
+    {
+     "who": "dale",
+     "text": "An ace. Remarkable."
+    }
+   ]
+  },
+  {
+   "id": "hole-albatross-01",
+   "moment": "hole",
+   "when": "albatross",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "An albatross. Three under."
+    },
+    {
+     "who": "darren",
+     "text": "[stunned] I've never seen one."
+    }
+   ]
+  },
+  {
+   "id": "hole-eagle-01",
+   "moment": "hole",
+   "when": "eagle",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "EAGLE!"
+    },
+    {
+     "who": "dale",
+     "text": "Two under. Stellar."
+    }
+   ]
+  },
+  {
+   "id": "hole-birdie-01",
+   "moment": "hole",
+   "when": "birdie",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Birdie. One under."
+    },
+    {
+     "who": "darren",
+     "text": "Lovely stuff."
+    }
+   ]
+  },
+  {
+   "id": "hole-par-01",
+   "moment": "hole",
+   "when": "par",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "Par."
+    },
+    {
+     "who": "dale",
+     "text": "Take it and move on."
+    }
+   ]
+  },
+  {
+   "id": "hole-bogey-01",
+   "moment": "hole",
+   "when": "bogey",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Bogey."
+    },
+    {
+     "who": "darren",
+     "text": "Shake it off. Next hole."
+    }
+   ]
+  },
+  {
+   "id": "hole-double-01",
+   "moment": "hole",
+   "when": "double",
+   "lines": [
+    {
+     "who": "darren",
+     "text": "[groans] Double."
+    },
+    {
+     "who": "dale",
+     "text": "Leave it here. Next tee."
+    }
+   ]
+  },
+  {
+   "id": "hole-worse-01",
+   "moment": "hole",
+   "when": "worse",
+   "lines": [
+    {
+     "who": "dale",
+     "text": "Well. We'll call that a learning experience."
+    },
+    {
+     "who": "darren",
+     "text": "[laughs] A long one."
+    }
+   ]
+  }
+ ],
+ "style": {
+  "rule": "Short, quick jabs. Real broadcast booth, not a sketch show. Say the thing, then stop.",
+  "length": "Most lines 1 to 6 words; never more than one short sentence. Only the welcome and goodbye get room to breathe.",
+  "response": "The response affirms or tops the call in a few words. It doesn't restate it, explain it, or add a second joke.",
+  "humor": "Comes from character and timing, not from constructed metaphors. One image at most, and only if it's instant (\"Clear the runway.\"). No similes about nans, fridges, pubs or crocodiles. No 'Dale!' / 'mate!' tacked on every line.",
+  "tags": "Use audio tags sparingly (a few per dozen lines); caps only on the one word that's shouted."
+ }
+}

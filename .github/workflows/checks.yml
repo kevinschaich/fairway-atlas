@@ -1,0 +1,8 @@
+name: Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  checks:
+    uses: kevinschaich/kevinschaich/.github/workflows/project.yml@main

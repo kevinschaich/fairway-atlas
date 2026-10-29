@@ -1,0 +1,28 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# dependencies and build output
+node_modules/
+.vite/
+dist/
+*.tsbuildinfo
+
+# deploy / hosting state
+.vercel
+.sites-runtime/
+
+# local tooling output and scratch (dev server frame captures, audio lab trash, hand-offs, session outputs)
+.captures/
+.scratch/
+.xfer/
+audio-trash/
+Claude outputs/
+public/audio/_unused/
+*.tgz
+*.patch
+
+# OS / editor
+.DS_Store
+*.log

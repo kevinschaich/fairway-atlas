@@ -1,0 +1,10 @@
+{
+  "name": "square-omni-debug",
+  "private": true,
+  "type": "module",
+  "description": "Terminal debug console and emulator for the Square Golf Omni. Kept out of the game's root package so the game stays dependency-free.",
+  "dependencies": {
+    "@stoprocent/noble": "2.8.0",
+    "@stoprocent/bleno": "0.13.1"
+  }
+}
