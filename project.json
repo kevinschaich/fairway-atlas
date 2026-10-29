@@ -3,5 +3,6 @@
     "name": "Fairway Atlas",
     "tagline": "Play any real golf course, right in your browser",
     "icon": "flag-triangle-right",
-    "url": "https://fairway-atlas-xi.vercel.app"
+    "url": "https://fairway-atlas-xi.vercel.app",
+    "screenshot": "screenshot.jpg"
 }
